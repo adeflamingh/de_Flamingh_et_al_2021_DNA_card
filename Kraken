@@ -1,0 +1,6 @@
+#kode for kraken
+module load Kraken2/2.1.1-IGB-gcc-8.2.0 
+
+
+
+kraken2-build --standard --threads 24 --db standard_NCBI
