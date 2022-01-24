@@ -1,0 +1,17 @@
+#(c) Adeflamingh
+#Code below includes basic command line options for analysis related to de Flamingh et al 202X "Title"
+
+#Trimmomatic:
+trimmomatic PE sample.R1_001.fastq sample.R2_001.fastq sample.forward_paired.fastq sample.forward_unpaired.fastq sample.reverse_paired.fastq sample.reverse_unpaired.fastq ILLUMINACLIP:TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 MINLEN:50
+
+#Kraken2:
+kraken2 --db custom_database --threads 24 --confidence 0.05 --report sample_report.txt  --output sample_output.txt --paired sample.forward_paired.fastq sample.reverse_paired.fastq 
+
+#PCANGSD:
+angsd -GL 1 -out GL_27_FC -nThreads 10 -doGlf 2 -doMajorMinor 1 -doMaf 2 -SNP_pval 1e-2 -minInd 14 -b bam.filelist -ref Chromosomes.v2.fasta
+
+#Samtools Depth and Breadth:
+samtools depth -a  ${sample}.ready.bam |	awk '{c++;s+=$3}END{print s/c}' 
+samtools depth -a  ${sample}.ready.bam |	awk '{c++; if($3>0) total+=1}END{print (total/c)*100}' 
+
+    
