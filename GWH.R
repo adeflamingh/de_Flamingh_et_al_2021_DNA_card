@@ -1,7 +1,7 @@
-setwd("~/Box Sync/Poop_cards/Analysis/WGS/heterozyg")
+setwd("enter/appropriate/path")
 
 #in R for every ml file
-a<-scan("SAT04.ml")
+a<-scan("Filename.ml")
 a[2]/sum(a)
 
 #record output in excel file
