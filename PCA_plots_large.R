@@ -1,5 +1,6 @@
-
-setwd("~/Box Sync/Poop_cards/Analysis/WGS/PCA")
+##original code based off of Yao, Lu, et al. "Population genetics of wild Macaca fascicularis with low‐coverage shotgun sequencing of museum specimens." American journal of physical anthropology 173.1 (2020): 21-33.
+##see 
+setwd("enter/appropriate/path")
 populations <- c("Fecal_card", "Kenya", "Kruger", "Mozambique")
 library(ggplot2)
 library(zoom)
@@ -25,12 +26,6 @@ pc1_2_3$depth = pop[,6]
 pc1_2_3$pop <-factor(pc1_2_3$pop, levels = populations)
 View(pc1_2_3)
 View(Per_vals)
-
-#pc_1_2_3_stats <- mutate(pc1_2_3, region = case_when(pop == "Mainland" ~ "Mainland",
-#                                                     pop %in% c("North_Sumatra", "South_Sumatra", "Bali", "Bangka", "Borneo", "Java", "Koh_Kut", "Penida") ~ "Continental",
-#                                                     pop %in% c("Nias", "Balabac", "Bohol", "Busuanga", "Leyte", "Luzon", "Maripipi", "Mindanao", "Negros", "Palawan") ~ 'Oceanic',
-#                                                     pop == "Central_Park_Zoo" ~ "Zoo"))
-#This plots individuals color-coded by region and has a unique shape/color assignment to each population. You can color-code by region instead of by pop but then you'll have 2 different legends.
 
 
 #plotting the first and second PC
