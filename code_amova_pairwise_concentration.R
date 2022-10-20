@@ -1,6 +1,6 @@
 #code for running repeated measures anova in R for fecal card concentration time trials
 
-setwd("~/Box Sync/Poop_cards/Analysis/concentration")
+setwd("enter appropriate path")
 data<-read.csv(file.choose())
 head(data)
 str(data) #make sure data is being read correctly
