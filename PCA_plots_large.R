@@ -1,5 +1,5 @@
 ##original code based off of Yao, Lu, et al. "Population genetics of wild Macaca fascicularis with low‐coverage shotgun sequencing of museum specimens." American journal of physical anthropology 173.1 (2020): 21-33.
-##see 
+##see https://github.com/kelsey-witt/macaque-lowcvg-pipeline
 setwd("enter/appropriate/path")
 populations <- c("Fecal_card", "Kenya", "Kruger", "Mozambique")
 library(ggplot2)
